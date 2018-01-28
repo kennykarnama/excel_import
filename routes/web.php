@@ -21,4 +21,5 @@ Route::get('/upload_file', ['uses' => 'Pages\UploadFileController@indexHome'])->
 
 Route::post('/upload_file/import', ['uses' => 'Pages\UploadFileController@import_excel'])->name('admin.upload_file.import');
 
+Route::post('/upload_file/status', ['uses' => 'Pages\UploadFileController@check_status'])->name('admin.upload_file.status');
 

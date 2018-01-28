@@ -17,6 +17,7 @@
         <!--[if gt IE 8]><!-->
             <link rel="stylesheet" href="{{asset('css/side-menu.css')}}">
         <!--<![endif]-->
+        <link rel="stylesheet" type="text/css" href="{{asset('css/pure-extras.css')}}">
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
         @stack('scripts')

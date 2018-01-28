@@ -56,6 +56,20 @@ class UploadFileController extends Controller
 
 
     }
+
+    public function check_status(Request $request)
+    {
+        # code...
+        $jumlah_queue = DB::table('jobs')->count();
+
+        $jumlah_data_skrng = DB::table('report')->count();
+
+        $data = array(
+            'jumlah_queue'=>$jumlah_queue,
+            'jumlah_data_skrng'=>$jumlah_data_skrng
+            );
+        return response()->json($data);
+    }
   
 
     private  function insert_data_to_db_one_by_one($table_name,$data)

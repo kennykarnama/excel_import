@@ -97,8 +97,12 @@ class UploadFileController extends Controller
     {
     	# code...
 
-    	ini_set('memory_limit', '-1');
-    	
+    		ini_set('memory_limit', '-1');
+
+    		ini_set('upload_max_filesize', '10M');
+			
+			ini_set('post_max_size', '10M');
+
     		if(Input::hasFile('import_file')){
 
     		

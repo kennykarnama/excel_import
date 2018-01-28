@@ -21,7 +21,9 @@ class ImportToDbJob implements ShouldQueue
      */
     private $path;
 
-    public $tries = 5;
+    public $tries = 1;
+
+    public $timeout = 0;
 
     public function __construct($path)
     {

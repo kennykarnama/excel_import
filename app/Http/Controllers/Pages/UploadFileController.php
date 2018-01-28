@@ -10,6 +10,7 @@ use Excel;
 use Session;
 use App\Jobs\CobaInsert;
 use App\Jobs\ImportToDbJob;
+use Artisan;
 
 
 
@@ -41,6 +42,8 @@ class UploadFileController extends Controller
     		dispatch(new ImportToDbJob($path));
 
     		$message = "Data sedang diimport";
+
+            // Artisan::call('queue:work',['--timeout'=>0]);
 
     		Session::flash('pesan_import',$message);
 

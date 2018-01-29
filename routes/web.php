@@ -23,3 +23,6 @@ Route::post('/upload_file/import', ['uses' => 'Pages\UploadFileController@import
 
 Route::post('/upload_file/status', ['uses' => 'Pages\UploadFileController@check_status'])->name('admin.upload_file.status');
 
+Route::get('/analisis_data', ['uses' => 'Pages\AnalisisDataController@indexHome'])->name('admin.analisis_data');
+
+Route::post('/analisis_data/laporan_per_arho', ['uses' => 'Pages\AnalisisDataController@get_laporan_per_arho'])->name('admin.laporan_per_arho');

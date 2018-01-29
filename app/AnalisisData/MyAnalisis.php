@@ -44,4 +44,8 @@ class MyAnalisis {
 
 	}
 
+	public static function is_valid_wilayah($jumlah_saldo){
+		return $jumlah_saldo > 0;
+	}
+
 }

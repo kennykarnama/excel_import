@@ -23,6 +23,60 @@ class AnalisisDataController extends Controller
     		]);
     }
 
+    public function get_laporan_arho(Request $request)
+    {
+        # code...
+        $arho = $request['arho'];
+
+        $list_kecamatan = MyAnalisis::fetch_kecamatan();
+
+        $laporan = array();
+
+        $laporan[0] = $arho;
+
+        $puter = 1;
+
+        foreach ($list_kecamatan as $kecamatan) {
+            # code...
+            
+
+            $jumlah_saldo = MyAnalisis::hitung_jumlah_saldo($arho,$kecamatan->nama_kecamatan);
+
+
+            $jumlah_saldo_bal_7 = MyAnalisis::hitung_jumlah_saldo_bal($arho,$kecamatan->nama_kecamatan,7);
+
+            $jumlah_saldo_bal_30 = MyAnalisis::hitung_jumlah_saldo_bal($arho,$kecamatan->nama_kecamatan,30);
+
+            $persen_bal7 = 0;
+
+            $persen_bal30 = 0;
+
+            if($jumlah_saldo > 0){
+                    $persen_bal7 = ($jumlah_saldo - $jumlah_saldo_bal_7) / ($jumlah_saldo);
+
+                        $persen_bal30 = ($jumlah_saldo - $jumlah_saldo_bal_30) / ($jumlah_saldo);
+            }
+
+            $tmp = array(
+                'nama_kecamatan'=>$kecamatan->nama_kecamatan,
+                'jumlah_saldo'=>$jumlah_saldo,
+                'bal7'=>$jumlah_saldo_bal_7,
+                'persen_bal7'=>$persen_bal7,
+                'bal30'=>$jumlah_saldo_bal_30,
+                'persen_bal30'=>$persen_bal30
+                );
+
+            if(MyAnalisis::is_valid_wilayah($jumlah_saldo)){
+               array_push($laporan, $tmp);
+            }
+           
+
+        }
+
+        return redirect()->back()->with('laporan', $laporan);
+        
+    }
+
     public function get_laporan_per_arho(Request $request)
     {
     	# code...

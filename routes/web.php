@@ -26,3 +26,5 @@ Route::post('/upload_file/status', ['uses' => 'Pages\UploadFileController@check_
 Route::get('/analisis_data', ['uses' => 'Pages\AnalisisDataController@indexHome'])->name('admin.analisis_data');
 
 Route::post('/analisis_data/laporan_per_arho', ['uses' => 'Pages\AnalisisDataController@get_laporan_per_arho'])->name('admin.laporan_per_arho');
+
+Route::post('/analisis_data/laporan_arho', ['uses' => 'Pages\AnalisisDataController@get_laporan_arho'])->name('admin.laporan_arho');

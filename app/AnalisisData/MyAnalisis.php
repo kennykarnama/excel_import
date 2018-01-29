@@ -20,6 +20,16 @@ class MyAnalisis {
 		return $query;
 	}
 
+	public static function fetch_kelurahan($kecamatan)
+	{
+		# code...
+		$query = DB::table('report')->select('report.KELURAHAN')->distinct()
+						   ->where('report.KECAMATAN','=',$kecamatan)
+						    ->get();
+		
+		return $query;
+	}
+
 	public static function hitung_jumlah_saldo($arho,$kecamatan)
 	{
 		# code...
@@ -32,6 +42,16 @@ class MyAnalisis {
 
 	}
 
+	public static function hitung_jumlah_saldo_kelurahan($arho,$kelurahan)
+	{
+		# code...
+		$jumlah_saldo = DB::table('report')->where('report.ARHO','=',$arho)
+											->where('report.KELURAHAN','=',$kelurahan)
+											->sum('report.SALDO2');
+
+		return $jumlah_saldo;
+	}
+
 	public static function hitung_jumlah_saldo_bal($arho,$kecamatan,$bal)
 	{
 		# code...
@@ -42,6 +62,17 @@ class MyAnalisis {
 
 		return $jumlah_saldo;
 
+	}
+
+	public static function hitung_jumlah_saldo_bal_kelurahan($arho,$kelurahan,$bal)
+	{
+		# code...
+		$jumlah_saldo = DB::table('report')->where('report.ARHO','=',$arho)
+											->where('report.KELURAHAN','=',$kelurahan)
+											->where('report.EOD','<=',$bal)
+											->sum('report.SALDO2');
+
+		return $jumlah_saldo;
 	}
 
 	public static function is_valid_wilayah($jumlah_saldo){

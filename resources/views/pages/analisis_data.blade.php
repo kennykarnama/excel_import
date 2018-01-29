@@ -77,7 +77,7 @@
                           <th style="text-align:center; vertical-align:middle;" rowspan="2">SALDO</th>
                           <th style="text-align:center; vertical-align:middle;" colspan="2" scope="colgroup">Bal 7</th>
                           <th style="text-align:center; vertical-align:middle;" colspan="2" scope="colgroup">Bal 30</th>
-                         
+                          <th style="text-align:center; vertical-align:middle;" rowspan="2">Actions</th>
                           </tr>
 
                           <tr>
@@ -85,6 +85,7 @@
                             <th scope="col" style="text-align:center; vertical-align:middle;">%.</th>
                             <th scope="col" style="text-align:center; vertical-align:middle;">Rp.</th>
                             <th scope="col" style="text-align:center; vertical-align:middle;">%</th>
+                            
                           </tr>
                         </thead>
                         
@@ -98,6 +99,7 @@
 
                                 @php
                                   $laporan_i = $laporan[$i];
+                                  $nama_arho = $laporan[0];
 
 
                                 @endphp
@@ -108,6 +110,7 @@
                                 <td>{{$laporan_i['persen_bal7']}}</td>
                                 <td>{{$laporan_i['bal30']}}</td>
                                 <td>{{$laporan_i['persen_bal30']}}</td>
+                                <td><a class="w3-button w3-blue" href="{{ URL::route('admin.detail_laporan_arho', [$nama_arho,$laporan_i['nama_kecamatan']]) }}">Lihat Detail</a></td>
                               </tr>
 
                               @endfor

@@ -30,3 +30,5 @@ Route::post('/analisis_data/laporan_per_arho', ['uses' => 'Pages\AnalisisDataCon
 Route::post('/analisis_data/laporan_arho', ['uses' => 'Pages\AnalisisDataController@get_laporan_arho'])->name('admin.laporan_arho');
 
 Route::get('/analisis_data/detail_laporan_arho/{arho}/{kecamatan}', ['uses' => 'Pages\AnalisisDataController@detail_laporan_arho'])->name('admin.detail_laporan_arho');
+
+Route::get('/map', ['uses' => 'Pages\MapTestController@indexHome'])->name('admin.map');

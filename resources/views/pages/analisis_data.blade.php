@@ -6,10 +6,12 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('css/jquery.tablescroll.css')}}">
 
+
+
         <div class="content">
 
 
-        <h2 class="content-subhead">Analisis Data Laporan</h2>
+        
 
         <form class="pure-form" action="{{route('admin.laporan_arho')}}" method="post">
           {{ csrf_field() }}
@@ -19,6 +21,8 @@
               <label for="arho">Nama Arho</label>
               <select id="arho" name="arho">
 
+              <option value="0">Semua</option>
+
                 @foreach($list_arho as $arho)
 
                 <option value="{{$arho->nama_lengkap}}">{{$arho->nama_lengkap}}</option>
@@ -26,16 +30,6 @@
                 @endforeach
 
               </select>
-          
-
-            <!--   <label for="kecamatan">Kecamatan</label>
-              <select id="kecamatan" name="kecamatan">
-
-                @foreach($list_kecamatan as $kecamatan)
-                  <option value="{{$kecamatan->nama_kecamatan}}">{{$kecamatan->nama_kecamatan}}</option>
-                @endforeach
-                 
-              </select>  -->
 
               <button type="submit" class="pure-button pure-button-primary">Tampilkan</button>
           
@@ -45,8 +39,17 @@
      
 
 
+
+
      
         </div>
+
+
+
+
+   
+
+    
 
 @if(session()->has('laporan'))
 
@@ -135,6 +138,7 @@
 
 </div>
 
+
 @else
 
 <div class="content">
@@ -153,12 +157,32 @@
 
 <script type="text/javascript" src="{{asset('js/jquery.tablescroll.js')}}"></script>
 
+
+
+
 <script type="text/javascript">
+
+var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+
 $(document).ready(function  () {
   // body...
   // $('#tabel_laporan').tableScroll({width:600,containerClass:'w3-table'});
+  initMap();
+  $('#map').show();
+
 
 });
 </script>
+
+ 
+
+
+     
 @endpush
 @stop

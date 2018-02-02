@@ -299,8 +299,7 @@ function init_laporan_kecamatan_map () {
                        laporan_map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
 
                       
-                       $('#legend').show();
-                        $('#laporan_map').show();            
+                                
 
                    }
                 });
@@ -312,7 +311,8 @@ $(document).ready(function  () {
   // body...
   // $('#tabel_laporan').tableScroll({width:600,containerClass:'w3-table'});
 
-
+   $('#legend').show();
+    $('#laporan_map').show();
   
 
   

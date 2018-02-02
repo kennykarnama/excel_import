@@ -29,6 +29,10 @@ Route::post('/analisis_data/laporan_per_arho', ['uses' => 'Pages\AnalisisDataCon
 
 Route::post('/analisis_data/laporan_arho', ['uses' => 'Pages\AnalisisDataController@get_laporan_arho'])->name('admin.laporan_arho');
 
-Route::get('/analisis_data/detail_laporan_arho/{arho}/{kecamatan}', ['uses' => 'Pages\AnalisisDataController@detail_laporan_arho'])->name('admin.detail_laporan_arho');
+Route::post('/analisis_data/laporan_kecamatan', ['uses' => 'Pages\AnalisisDataController@get_laporan_kecamatan'])->name('admin.laporan_kecamatan');
+
+Route::post('/analisis_data/detail_laporan_arho}', ['uses' => 'Pages\AnalisisDataController@detail_laporan_arho'])->name('admin.detail_laporan_arho');
+
+Route::get('/analisis_data/detail_laporan_kecamatan/{kecamatan}', ['uses' => 'Pages\AnalisisDataController@detail_laporan_kecamatan'])->name('admin.detail_laporan_kecamatan');
 
 Route::get('/map', ['uses' => 'Pages\MapTestController@indexHome'])->name('admin.map');

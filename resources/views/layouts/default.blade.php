@@ -22,7 +22,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
         @stack('scripts')
-</head>
+       </head>
 <body>
 
 
@@ -48,22 +48,57 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 50%;
+        height: 100%;
+        
       }
+
+      #laporan_map{
+        height: 60%;
+        width: 100%;
+    
+       
+      }
+
+      #legend {
+        font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;
+        border: 3px solid #000;
+      }
+      #legend h3 {
+        margin-top: 0;
+      }
+      #legend img {
+        vertical-align: middle;
+      }
+
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
-        margin: 0;
-        padding: 0;
+        
+       
       }
     </style>
 
-<div class="content w3-container" id="map" style="display: none;">
+
+<div  id="map" style="display: none;">
+
+</div>
+
+<div  id="laporan_map" style="display: none;">
     
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDct4JdjooCrU0Cb9-KwJyW9_sZ2bv7gHo"
-    async defer></script>   
+  <div id="legend" style="display:none;"><h3>Legend</h3></div>
+ 
+
+
+
+  
+
+
+
 
 
 <script src="{{asset('js/ui.js')}}"></script>

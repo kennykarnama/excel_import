@@ -14,8 +14,26 @@ class MyAnalisis {
 		return $query;
 	}
 
+	public static function fetch_arho_by_kecamatan($kecamatan)
+	{
+		# code...
+		$query = DB::table('report')->select('report.ARHO')->distinct()
+									->where('report.KECAMATAN','=',$kecamatan)->get();
+
+		return $query;
+	}
+
 	public static function fetch_kecamatan(){
 		$query = DB::table('kecamatan')->where('kecamatan.is_aktif','=',1)->get();
+
+		return $query;
+	}
+
+	public static function fetch_kecamatan_from_xls()
+	{
+		# code...
+		$query = DB::table('report')->select('report.KECAMATAN')->distinct()
+					 ->get();
 
 		return $query;
 	}

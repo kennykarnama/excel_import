@@ -134,7 +134,7 @@
 <script type="text/javascript" src="{{asset('js/jquery.tablescroll.js')}}"></script>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDct4JdjooCrU0Cb9-KwJyW9_sZ2bv7gHo"></script>   
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDct4JdjooCrU0Cb9-KwJyW9_sZ2bv7gHo&callback=initMap" async defer></script>   
 
 <script type="text/javascript">
 
@@ -147,6 +147,9 @@ var map;
           center: {lat: -7.257472, lng: 112.752088},
           zoom: 8
         });
+
+
+  init_laporan_kecamatan_map();
 
 
       }
@@ -310,9 +313,7 @@ $(document).ready(function  () {
   // $('#tabel_laporan').tableScroll({width:600,containerClass:'w3-table'});
 
 
-  initMap();
-
-  init_laporan_kecamatan_map();
+  
 
   
 

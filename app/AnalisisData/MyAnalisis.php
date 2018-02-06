@@ -14,6 +14,16 @@ class MyAnalisis {
 		return $query;
 	}
 
+	public static function get_place_id($kecamatan)
+	{
+		# code...
+		$query = DB::table('kecamatan')->select('kecamatan.place_id')
+										->where('kecamatan.nama_kecamatan','=',$kecamatan)
+										->get();
+
+		return $query;
+	}
+
 	public static function fetch_arho_by_kecamatan($kecamatan)
 	{
 		# code...
@@ -29,6 +39,15 @@ class MyAnalisis {
 		return $query;
 	}
 
+	public static function fetch_kecamatan_by_arho($arho)
+	{
+		# code...
+		$query = DB::table('report')->select('report.KECAMATAN')->distinct()
+									->where('report.ARHO','=',$arho)->get();
+
+		return $query;
+	}
+
 	public static function fetch_kecamatan_from_xls()
 	{
 		# code...
@@ -37,6 +56,8 @@ class MyAnalisis {
 
 		return $query;
 	}
+
+	
 
 	public static function fetch_kelurahan($kecamatan)
 	{

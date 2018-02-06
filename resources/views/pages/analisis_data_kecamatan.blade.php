@@ -68,7 +68,7 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJD39HGxz61y0Rlnevs
 
 <div class="content">
    <iframe width="600" height="450" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJD39HGxz61y0Rlnevskevh7o&key=AIzaSyCyeVc3UAC4QH-BTOMxDmHurREmagwv3DY" allowfullscreen></iframe>
+src="https://www.google.com/maps/embed/v1/place?q=place_id:{{$place_id}}&key=AIzaSyCyeVc3UAC4QH-BTOMxDmHurREmagwv3DY" allowfullscreen></iframe>
 </div>
 
 @if(session()->has('detail_laporan'))

@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="w3-container" style="margin-bottom:15px;">
+        <div class="w3-container" style="margin-bottom:15px; margin-left:200px;">
 
             <div class="pure-g">
                   

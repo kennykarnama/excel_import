@@ -40,3 +40,5 @@ Route::get('/map', ['uses' => 'Pages\MapTestController@indexHome'])->name('admin
 Route::get('/analisis_data_arho', ['uses' => 'Pages\AnalisisDataArhoController@indexHome'])->name('admin.analisis_data_arho');
 
 Route::post('/analisis_data_arho/get_laporan_arho', ['uses' => 'Pages\AnalisisDataArhoController@get_laporan_arho'])->name('admin.analisis_data_arho.get_laporan_arho');
+
+Route::post('/analisis_data_arho/get_maps_arho', ['uses' => 'Pages\AnalisisDataArhoController@get_maps_arho'])->name('admin.analisis_data_arho.get_maps_arho');

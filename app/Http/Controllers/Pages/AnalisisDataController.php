@@ -73,12 +73,15 @@ class AnalisisDataController extends Controller
 
         $list_arho = MyAnalisis::fetch_arho_by_kecamatan($kecamatan);
 
-       
+        $query_place_id = MyAnalisis::get_place_id($kecamatan);
+
+        $place_id = $query_place_id[0]->place_id;
 
         return view('pages.analisis_data_kecamatan',[
 
             'list_arho'=>$list_arho,
-            'kecamatan'=>$kecamatan
+            'kecamatan'=>$kecamatan,
+            'place_id'=>$place_id
 
            
             ]);

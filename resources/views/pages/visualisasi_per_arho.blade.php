@@ -10,5 +10,7 @@
                 <h4 style="text-align:center;">Detail Laporan</h4>
                 <p>{{$arho}}</p>
             </div>
-        </div>
+ </div>
+
+ 
 @stop

@@ -12,7 +12,7 @@
                 <li class="pure-menu-item"><a href="{{route('admin.home')}}" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="{{route('admin.upload_file')}}" class="pure-menu-link">Upload File</a></li>
                 <li class="pure-menu-item"><a href="{{route('admin.analisis_data')}}" class="pure-menu-link">Analisis Data Kecamatan</a></li>
-                <li class="pure-menu-item"><a href="{{route('admin.analisis_data')}}" class="pure-menu-link">Analisis Data Arho</a></li>
+                <li class="pure-menu-item"><a href="{{route('admin.analisis_data_arho')}}" class="pure-menu-link">Analisis Data Arho</a></li>
                 
             </ul>
         </div>

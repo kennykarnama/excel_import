@@ -10,12 +10,9 @@
 
         <div class="content">
 
-        <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
-        <p><b>Visualisasi Data Umum Kualitas Berdasarkan Kecamatan</b></p>
-      </div>
-
-     
-
+            <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+            <p><b>Visualisasi Data Umum Kualitas Berdasarkan Kecamatan</b></p>
+          </div>
 
      
         </div>
